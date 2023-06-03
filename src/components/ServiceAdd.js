@@ -10,21 +10,25 @@ export default function ServiceAdd() {
     }
     const handleSubmit = evt => { 
         evt.preventDefault();
-        console.log(item)
         const {name, price} = item;
         dispatch( addService(name, price) )
     }
+
+    const handleClear = evt => {
+        evt.preventDefault()
+        dispatch ( changeServiceField('', '') )
+    }
+ 
     return (
         <form onSubmit={handleSubmit}>
-            <div className="input-group input-group-sm mb-3">
-                <span className="input-group-text" id="inputGroup-sizing-sm">Название</span>
+            <div className="input-group input-group-sm m-3">
+                <span className="input-group-text " id="inputGroup-sizing-sm">Название</span>
                 <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name='name' onChange={handleChange} value={item.name} />
-            </div>
-            <div className="input-group input-group-sm mb-3">
                 <span className="input-group-text" id="inputGroup-sizing-sm">Стоимость</span>
                 <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name='price' onChange={handleChange} value={item.price} />
+                <button type='submit' className="btn btn-primary">Сохранить</button>
+                <button className="btn btn-secondary ms-1" onClick={handleClear} >Очистить</button>
             </div>
-            <button type='submit' className="btn btn-primary">Сохранить</button>
         </form>
     );
 }
