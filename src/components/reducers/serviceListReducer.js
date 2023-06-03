@@ -7,8 +7,6 @@ const initialState = [
 ];
 
 export default function serviceListReducer (state=initialState, action) {
-    // console.log(state)
-    // console.log(action.payload)
     switch (action.type) {
         case ADD_SERVICE:
             let { name, price } = action.payload;
@@ -18,7 +16,7 @@ export default function serviceListReducer (state=initialState, action) {
             return state.filter(service => service.id !== id)
         case EDIT_SERVICE:
             let { id: editId, name: editName, price: editPrice } = action.payload;
-            return [...state.filter(service => service.id !== action.payload.id), { id: action.payload.id, name, price: Number(price) }]
+            return [...state.filter(service => service.id !== editId), { id: editId, name: editName, price: Number(editPrice) }]
         default:
             return state;
     }
