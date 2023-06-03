@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 function App() {
   return (
     <Provider store={store}>
-      <div className='container mx-auto' style={{width: '60vw'}}>
+      <div className='container mx-auto' style={{width: '70vw'}}>
         <ServiceAdd />
         <ServiceList />
       </div>

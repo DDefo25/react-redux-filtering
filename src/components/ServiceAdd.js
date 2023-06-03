@@ -25,14 +25,12 @@ export default function ServiceAdd() {
     }
  
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="input-group input-group-sm m-3">
-                <span className="input-group-text " id="inputGroup-sizing-sm">Название</span>
-                <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name='name' onChange={handleChange} value={item.name} />
-                <span className="input-group-text" id="inputGroup-sizing-sm">Стоимость</span>
-                <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name='price' onChange={handleChange} value={item.price} />
+        <form className='m-3' onSubmit={handleSubmit}>
+            <div className="input-group">
+                <input type="text" className="form-control" placeholder="Название" aria-label="Service name input" aria-describedby="inputGroup-sizing-sm" name='name' onChange={handleChange} value={item.name} />
+                <input type="text" className="form-control" placeholder="Стоимость" aria-label="Service price input" aria-describedby="inputGroup-sizing-sm" name='price' onChange={handleChange} value={item.price} />
                 <button type='submit' className="btn btn-primary">Сохранить</button>
-                <button className="btn btn-secondary ms-1" onClick={handleClear} >Очистить</button>
+                <button type='button' className="btn btn-secondary" onClick={handleClear} >Очистить</button>
             </div>
         </form>
     );
