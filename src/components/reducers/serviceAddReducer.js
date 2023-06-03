@@ -1,6 +1,6 @@
 import { CHANGE_SERVICE_FIELD } from "../actions/actionsTypes";
 
-const initialState = { name: '', price: '', }
+const initialState = {  id: '', name: '', price: ''}
 
 export default function serviceAddReducer (state = initialState, action ) {
     switch (action.type) {

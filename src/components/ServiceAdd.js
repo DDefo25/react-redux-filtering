@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addService, changeServiceField } from "./actions/actions";
+import { addService, changeServiceField, editService } from "./actions/actions";
 
 export default function ServiceAdd() {
     const item = useSelector(state => state.serviceAdd)
@@ -10,8 +10,19 @@ export default function ServiceAdd() {
     }
     const handleSubmit = evt => { 
         evt.preventDefault();
+<<<<<<< HEAD
         const {name, price} = item;
         dispatch( addService(name, price) )
+=======
+        const {id, name, price} = item;
+        if (id) {
+            dispatch( editService(id, name, price) )
+        } else {
+            dispatch( addService(name, price) )
+        }
+        console.log(item)
+
+>>>>>>> 184d8ca1e455edd0c4b4e433b8d36fcce1abf322
     }
 
     const handleClear = evt => {

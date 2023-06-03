@@ -1,4 +1,4 @@
-import { ADD_SERVICE, REMOVE_SERVICE, CHANGE_SERVICE_FIELD } from './actionsTypes'
+import { ADD_SERVICE, REMOVE_SERVICE, CHANGE_SERVICE_FIELD, EDIT_SERVICE } from './actionsTypes'
 
 
 export function addService ( name, price ) {
@@ -11,4 +11,8 @@ export function removeService ( id ) {
 
 export function changeServiceField ( name, value ) {
     return { type: CHANGE_SERVICE_FIELD, payload: {name, value}}
+}
+
+export function editService ( id, name, value ) {
+    return { type: EDIT_SERVICE, payload: {id, name, value}}
 }
