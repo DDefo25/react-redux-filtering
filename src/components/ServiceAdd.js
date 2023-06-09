@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { addService, changeServiceField, clearServiceField, editService } from "./actions/actions";
+import { addService, changeServiceField, clearServiceField, editService } from "../store/actions/actions";
 
 export default function ServiceAdd() {
     const item = useSelector(state => state.serviceAdd)
@@ -27,8 +27,8 @@ export default function ServiceAdd() {
     return (
         <form className='m-3' onSubmit={handleSubmit}>
             <div className="input-group">
-                <input type="text" className="form-control" placeholder="Название" aria-label="Service name input" aria-describedby="inputGroup-sizing-sm" name='name' onChange={handleChange} value={item.name} />
-                <input type="text" className="form-control" placeholder="Стоимость" aria-label="Service price input" aria-describedby="inputGroup-sizing-sm" name='price' onChange={handleChange} value={item.price} />
+                <input type="text" className="form-control" placeholder="Название" name='name' onChange={handleChange} value={item.name} />
+                <input type="number" className="form-control" placeholder="Стоимость" name='price' onChange={handleChange} value={item.price} />
                 <button type='submit' className="btn btn-primary">Сохранить</button>
                 <button type='button' className="btn btn-secondary" onClick={handleClear} >Очистить</button>
             </div>
